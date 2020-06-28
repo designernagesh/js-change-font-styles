@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Change font-family, font-size and color</title>  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800;900&display=swap"> 
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="height: 90vh" class="d-flex mt-4 justify-content-center align-items-center">
+  <div class="container">
+    <h1 class="display-3 text-danger my-4">Change font-family, font-size and color</h1>
+
+    <input type="text" id="textInput" onkeyup="displayText()" class="form-control form-control-lg mb-4" placeholder="Write text...">
+
+    <div id="textDisplay" class="text-center my-4">
+      Write text...
+    </div>
+
+    <ul id="list">
+      <li>
+        <div class="form-group">
+          <label for="textSize">Font Size</label>
+          <input type="number" class="form-control" value="16" min="16" id="textSize" onchange="changeFontSize()">          
+        </div>        
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="fontFamily">Font Family</label>
+          <select class="form-control" id="fontFamily" onchange="changeFontFamily()">
+          <option value="Arial">Arial</option>
+          <option value="Arial Black">Arial Black</option>
+          <option value="Bookman">Bookman</option>
+          <option value="Candara">Candara</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Courier">Courier</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Impact">Impact/option>
+          <option value="Palatino">Palatino</option>
+          <option value="Roboto">Roboto</option>
+          <option value="Times">Times</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Verdana">Verdana</option>
+        </select>
+        </div>      
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="textColor">Font Color</label>
+          <select class="form-control" id="textColor" onchange="changeFontColor()">
+          <option value="#C0C0C0">SILVER</option> 
+          <option value="#808080">Gray</option>
+          <option value="#000000">Black</option>
+          <option value="#FF0000">Red</option>
+          <option value="#800000">Maroon</option>
+          <option value="#FFFF00">Yellow</option>
+          <option value="#808000">Olive</option>
+          <option value="#00FF00">Lime</option>
+          <option value="#008000">Green</option>
+          <option value="#00FFFF">Aqua</option>
+          <option value="#008080">Teal</option>
+          <option value="#0000FF">Blue</option>
+          <option value="#000080">Navy</option>
+          <option value="#FF00FF">Fuchsia</option>
+          <option value="#800080">Purple</option>
+        </select>         
+        </div>        
+      </li>      
+    </ul>    
+  </div>
+  <script>    
+    let textDisplay = document.getElementById("textDisplay"); 
+
+    const displayText = () => {
+      let textInput = document.getElementById("textInput");
+      textDisplay.innerHTML = textInput.value      
+    }
+
+    const changeFontSize = () => {                  
+      let textSize = document.getElementById("textSize").value;      
+      textDisplay.style.fontSize = textSize + 'px';
+    }
+
+    const changeFontFamily = () => {
+      let fontFamily = document.getElementById("fontFamily").value;
+      textDisplay.style.fontFamily = fontFamily;
+    }
+
+    const changeFontColor = () => {      
+      let textColor = document.getElementById("textColor").value;      
+      textDisplay.style.color = textColor
+    }
+  </script>
+</body>
+</html>
